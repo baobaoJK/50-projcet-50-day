@@ -1,0 +1,120 @@
+$transitionTime: 0.7s;
+
+html,
+body,
+.main {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.panel-box {
+    display: flex;
+    width: 90vw;
+    height: 80vh;
+
+    .panel {
+        flex: 0.5;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin: 10px;
+        border-radius: 16px;
+        transition: all $transitionTime ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            padding-right: 40px;
+        }
+
+        p {
+            display: inline-block;
+            position: absolute;
+            left: 32px;
+            bottom: 32px;
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 100;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+        }
+    }
+
+    .panel-1 {
+        background: url("images/1.jpg") no-repeat center center;
+        background-size: cover;
+    }
+
+    .panel-2 {
+        background: url("images/2.jpg") no-repeat center center;
+        background-size: cover;
+    }
+
+    .panel-3 {
+        background: url("images/3.jpg") no-repeat center center;
+        background-size: cover;
+
+        p {
+            color: #FA8798;
+        }
+
+        span {
+            color: white;
+        }
+    }
+
+    .panel-4 {
+        background: url("images/4.jpg") no-repeat center center;
+        background-size: cover;
+
+        p {
+            color: #504cff;
+        }
+
+        span {
+            color: #ff838c;
+        }
+    }
+
+    .panel-5 {
+        background: url("images/5.jpg") no-repeat center center;
+        background-size: cover;
+
+        p {
+            color: rgb(212, 212, 212);
+        }
+
+        span:nth-child(1) {
+            color: rgb(117, 157, 250);
+        }
+
+        span:nth-child(2) {
+            color: #ff9c3a;
+        }
+
+        span:nth-child(3) {
+            color: #f9366d;
+        }
+    }
+
+    .active {
+        flex: 5;
+
+        &:hover {
+            padding: 0;
+        }
+
+        p {
+            transition: opacity $transitionTime ease-in-out 0.3s;
+            opacity: 1;
+        }
+    }
+}
